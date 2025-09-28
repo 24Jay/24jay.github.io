@@ -6,7 +6,7 @@ categories:
   - AI
 tags:
   - RL
-pin: true
+pin: false
 math: true
 ---
 

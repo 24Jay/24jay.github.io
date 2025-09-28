@@ -1,12 +1,12 @@
 ---
-title: 强化学习之蒙特卡洛方法 
-description: >-
-  Get started with Monte Carlo Method in Reinforcement Learning
-  You will learn the basics 
+title: 强化学习之蒙特卡洛方法
+description: "Get started with Monte Carlo Method in Reinforcement Learning You will learn the basics "
 date: 2025-06-09 20:55:00 +0800
-categories: [AI] 
-tags: [RL]
-pin: true
+categories:
+  - AI
+tags:
+  - RL
+pin: false
 math: true
 ---
 
