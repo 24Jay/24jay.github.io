@@ -13,8 +13,7 @@ pin: false
 ---
 ## 参考文档
 
-[Paper](https://arxiv.org/abs/2106.01345)
-
+> 论文地址：https://arxiv.org/abs/2106.01345
 
 
 ## 1. Abstract
@@ -23,11 +22,7 @@ Decision Transformer:
 : casts the problem of RL as conditional sequence modeling.
 : simply outputs the optimal actions by leveraging a causally masked Transformer.
 
-
-
 ![Decision Transformer架构](assets/img/posts/20251213/decisionTransformer.png)
-![]()
-
 ## 2. Introduction
 - 替换传统的RL算法：modeling the joint distribution of the sequence of states, actions, and rewards
 
