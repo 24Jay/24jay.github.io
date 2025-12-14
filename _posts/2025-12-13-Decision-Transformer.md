@@ -24,12 +24,11 @@ Decision Transformer:
 : simply outputs the optimal actions by leveraging a causally masked Transformer.
 
 
+
 ![Decision Transformer架构](assets/img/posts/20251213/decisionTransformer.png)
 ![]()
 
 ## 2. Introduction
-
-- Offline RL
 - 替换传统的RL算法：modeling the joint distribution of the sequence of states, actions, and rewards
 
 
