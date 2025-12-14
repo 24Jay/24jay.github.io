@@ -8,7 +8,7 @@ tags:
   - VLA
   - RL
 math: true
-description: Isaac Lab is unified and modular framework for robot learning that aims to simplify common workflows in robotics research.
+description: " A framework that abstracts RL as a sequence modeling problem."
 pin: false
 ---
 ## 参考文档
@@ -18,9 +18,15 @@ pin: false
 
 
 ## 1. Abstract
+Decision Transformer:
+: A framework that abstracts RL as a sequence modeling problem.
+: casts the problem of RL as conditional sequence modeling.
+: simply outputs the optimal actions by leveraging a causally masked Transformer.
 
 
 ![Decision Transformer架构](assets/img/posts/20251213/decisionTransformer.png)
 ![]()
+
+## 2. Introduction
 
 
