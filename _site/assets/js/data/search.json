@@ -1,6 +1,24 @@
 [
   
   {
+    "title": "High-dimensional Continuous Control Using Generalized Advantage Estimation",
+    "url": "/posts/GAE/",
+    "categories": "AI",
+    "tags": "RL",
+    "date": "2025-12-26 20:00:00 +0800",
+    "content": "参考文档  # High-Dimensional Continuous Control Using Generalized Advantage Estimation  1. Abstract    策略梯度可以直接优化累计奖励： Policy gradient methods are an appealing approach in reinforcement learning because they directly optimize the cumulative reward.    但是存在两个主要问题：        样本效率：the large number of samples typically required     稳定的策略提升： the difficulty of obtaining stable and steady improvement despite the nonstationarity of the incoming data      "
+  },
+  
+  {
+    "title": "多智能体强化学习",
+    "url": "/posts/multi-agent-rl/",
+    "categories": "AI",
+    "tags": "RL, 多智能体",
+    "date": "2025-12-25 20:00:00 +0800",
+    "content": "参考文档  # Transformer-based Multi-Agent Reinforcement Learning for Generalization of Heterogeneous Multi-Robot Cooperation  "
+  },
+  
+  {
     "title": "Denoising Diffusion Probabilistic Models",
     "url": "/posts/diffusion-model/",
     "categories": "AI",
