@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-12-27T12:24:16+08:00</updated>
+  <updated>2025-12-27T20:32:28+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/GAE/" rel="alternate" type="text/html" title="High-dimensional Continuous Control Using Generalized Advantage Estimation" />
     <published>2025-12-26T20:00:00+08:00</published>
   
-    <updated>2025-12-26T20:00:00+08:00</updated>
+    <updated>2025-12-27T12:24:34+08:00</updated>
   
     <id>http://localhost:4000/posts/GAE/</id>
     <content type="text/html" src="http://localhost:4000/posts/GAE/" />
