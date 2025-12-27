@@ -11,8 +11,6 @@ description:
 pin: false
 ---
 ## 参考文档
-[]()
-
 
 [# Transformer-based Multi-Agent Reinforcement Learning for Generalization of Heterogeneous Multi-Robot Cooperation](https://ieeexplore.ieee.org/document/10802580)
 
