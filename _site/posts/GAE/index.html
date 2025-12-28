@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation" />
 <meta name="twitter:site" content="@Qx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-27T20:34:23+08:00","datePublished":"2025-12-26T20:00:00+08:00","description":"针对策略梯度优势估计的问题「高方差variance、高偏差bias」提出统一框架GAE来平滑地处理variance和bias之间的平衡。","headline":"广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/GAE/"},"url":"http://localhost:4000/posts/GAE/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-28T15:10:18+08:00","datePublished":"2025-12-26T20:00:00+08:00","description":"针对策略梯度优势估计的问题「高方差variance、高偏差bias」提出统一框架GAE来平滑地处理variance和bias之间的平衡。","headline":"广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/GAE/"},"url":"http://localhost:4000/posts/GAE/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -679,13 +679,13 @@
 
 <time
   
-  data-ts="1766838863"
+  data-ts="1766905818"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Dec 27, 2025
+  Dec 28, 2025
 </time>
 
         </span>
@@ -732,9 +732,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="612 words"
+  title="864 words"
 >
-  <em>3 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -812,18 +812,18 @@
 
 \[Q^{\pi, \gamma}(s_t, a_t) = \mathbb{E}_{s_{t+1}:\infty,a_{t+1}:\infty}[\sum_{l=0}^{\infty}\gamma^lr_{t+l}]\]
 
-<p>折扣优势函数定义为：</p>
+<p>对于状态$s_t$下动作$a_t$折扣优势函数定义为：</p>
 
 \[\color{red}A^{\pi,\gamma}(s_t, a_t) =  Q^{\pi,\gamma}(s_t, a_t) - V^{\pi,\gamma}(s_t)\]
 
 <p>强化学习实际应用中通过神经网络去估计价值函数$V_{\phi}(s_t)$，然后结合实际交互得到的奖励去估算动作的优势函数。</p>
 
 <blockquote class="prompt-tip">
-  <p><strong>方法一（高方差High Variance）：$\hat{A_t} = r_t + \sum_{l=t+1}^{\infty}\gamma^lr_{t+1}-V_{\phi}(s_{t})$</strong></p>
+  <p><strong>方法一（MC：高方差High Variance）：$\hat{A_t} = r_t + \sum_{l=t+1}^{\infty}\gamma^lr_{t+1}-V_{\phi}(s_{t})$</strong></p>
 
   <p>使用用实际交互得到的奖励近似估算动作值价值$Q(s_t, a_t)=r_t + \gamma r_{t+1}+\gamma ^2r_{t+2}+…$会因为环境随机性而波动很大，导致估计的方差很大。</p>
 
-  <p><strong>方法二（高偏差High Bias）：$\hat{A_t} \approx \delta_{t}= r_t + \gamma V_{\phi}(s_{t+1})-V_{\phi}(s_{t})$</strong></p>
+  <p><strong>方法二（TD：高偏差High Bias）：$\hat{A_t} \approx \delta_{t}= r_t + \gamma V_{\phi}(s_{t+1})-V_{\phi}(s_{t})$</strong></p>
 
   <p>使用单步的TD误差近似优势函数，方差会小但是偏差会变大，因为它只考虑了一步的奖励。</p>
 
@@ -836,18 +836,72 @@
 </ul>
 
 <h2 id="2-gae的核心思想偏差与方差的权衡"><span class="me-2">2. GAE的核心思想：偏差与方差的权衡</span><a href="#2-gae的核心思想偏差与方差的权衡" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<blockquote class="prompt-tip">
+  <p><strong>GAE(γ, λ)和TD(λ)的区别：</strong></p>
+  <ol>
+    <li>GAE(γ, λ)：估计的是优势函数（动作$a_t$比策略的默认动作「平均值」好还是差）</li>
+    <li>TD(λ)：估计的是状态值函数或动作值函数</li>
+  </ol>
+</blockquote>
 
-<p>GAE提出一个统一的框架，可以在偏差和方差之间进行平滑地权衡：
-\(\color{green}\hat{A}_t^{GAE(\gamma,\lambda)} = \sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l}^V\)
-其中TD误差项$\delta_t^V$定义为：
-\(\delta_{t}= r_t + \gamma V_{\phi}(s_{t+1})-V_{\phi}(s_{t})\)</p>
+<p>GAE提出一个统一的框架，可以在偏差和方差之间进行平滑地权衡：</p>
 
-<dl>
-  <dt>问题：Credit Assignment Problem(Distal reward problem):</dt>
-  <dd>the long time delay between actions  and their positive or negative effect on rewards</dd>
-  <dt>方案：Value Function:</dt>
-  <dd>Value functions offer an elegant solution to the credit assignment problem—they allow us to estimate the goodness of an action before the delayed reward arrives.</dd>
-</dl>
+\[\color{green}\hat{A}_t^{GAE(\gamma,\lambda)} = \sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l}^V\]
+
+<p>其中TD误差项$\delta_t^V$定义如下：</p>
+
+\[\delta_{t}^V= r_t + \gamma V_{\phi}(s_{t+1})-V_{\phi}(s_{t})\]
+
+<blockquote>
+  <p>TD误差也可以视为一个优势函数的估计</p>
+</blockquote>
+
+\[\begin{align}
+A^{\pi,\gamma}(s_t, a_t) &amp;= \mathbb{E}_{s_{t+1}}[Q^{\pi,\gamma}(s_t, a_t) - V^{\pi,\gamma}(s_t)]\\
+&amp;= \mathbb{E}_{s_{t+1}}[r_t + \gamma V^{\pi,\gamma}(s_{t+1})-V^{\pi,\gamma}(s_{t})]\\
+&amp;= \mathbb{E}_{s_{t+1}}[\delta_t^{V^{\pi,\gamma}}]
+\end{align}\]
+
+<p>定义：<br />
+\(\hat{A}_t^{(1)}:=\delta_t^{V}=-V(s_t) + r_t + \gamma V(s_{t+1})\)
+<br />
+\(\hat{A}_t^{(2)}:=\delta_t^{V} + \gamma \delta_{t+1}^{V}=-V(s_t) + r_t + \gamma r_{t+1}+\gamma^2 V(s_{t+2})\)
+<br />
+\(\hat{A}_t^{(3)}:=\delta_t^{V} + \gamma \delta_{t+1}^{V} + \gamma ^2 \delta_{t+2}^{V}=-V(s_t) + r_t + \gamma r_{t+1} + \gamma^2 r_{t+2}+\gamma^3 V(s_{t+3})\)
+<br />
+\(\hat{A}_t^{(k)}:=\sum_{l=0}^{k-1}\gamma ^{l} \delta_{t+l}^{V}=-V(s_t) + r_t + \gamma r_{t+1} + \gamma^2 r_{t+2}+...+\gamma^k V(s_{t+k})\)
+<br />
+\(\hat{A}_t^{(\infty)}:=\sum_{l=0}^{\infty}\gamma ^{l} \delta_{t+l}^{V}=-V(s_t) + \sum_{l=0}^{\infty}\gamma^{l} r_{t+l}\)</p>
+
+<p>上述多个公式都可以视为对优势函数的估计，当$k\rightarrow\infty$，偏差bias逐渐缩小。</p>
+
+<p>广义优势函数估计定义为$GAE(\gamma,\lambda)$：</p>
+
+<p>\(\begin{align}
+\hat{A}_t^{GAE(\gamma,\lambda)} &amp;:=(1-\lambda)(\hat{A}_t^{(1)} + \lambda \hat{A}_t^{(2)}+\lambda^2 \hat{A}_t^{(3)}+...)\\
+&amp;:=\sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l}^V\\
+\end{align}\)
+两个特殊的形式：</p>
+<ul>
+  <li>当$\lambda=0$的时候$\hat{A}^{GAE(\gamma, 0)}=r_t+\gamma V(s_{t+1}) - V({s_t})$</li>
+  <li>当$\lambda =1$的时候$\hat{A}^{GAE(\gamma, 1)}=\sum_{l=0}^{\infty}\gamma^{l}r_{t+l} - V({s_t})$</li>
+</ul>
+
+<blockquote class="prompt-info">
+  <p>讨论： $\gamma$和$\lambda$都对于bias-variance的权衡发生作用</p>
+  <ol>
+    <li>$\gamma$主要决定了scale of the value function $V^{\pi,\gamma}$，$\lambda$对value function的scale没有影响</li>
+    <li></li>
+  </ol>
+</blockquote>
+
+<p>使用上述广义优势估计得到有偏差的策略梯度（biased estimator ）:</p>
+
+\[g^{\gamma}\approx\mathbb{E}[\sum_{t=0}^{\infty}\hat{A}_t^{GAE(\gamma,\lambda)}\nabla_{\theta}log\pi_{\theta}(a_t|s_t)]=\mathbb{E}[\sum_{t=0}^{\infty}\sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l}^V\nabla_{\theta}log\pi_{\theta}(a_t|s_t)]\]
+
+<blockquote>
+  <p>当$\lambda=1$的时候取等号</p>
+</blockquote>
 
 
   </div>
@@ -975,14 +1029,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/multi-agent-rl/">多智能体强化学习</a>
+          <a href="/posts/GAE/">广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/GAE/">广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation</a>
+          <a href="/posts/multi-agent-rl/">多智能体强化学习</a>
         </li>
       
         
