@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-12-27T20:32:28+08:00</updated>
+  <updated>2025-12-28T15:09:45+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>High-dimensional Continuous Control Using Generalized Advantage Estimation</title>
-    <link href="http://localhost:4000/posts/GAE/" rel="alternate" type="text/html" title="High-dimensional Continuous Control Using Generalized Advantage Estimation" />
+    <title>广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation</title>
+    <link href="http://localhost:4000/posts/GAE/" rel="alternate" type="text/html" title="广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation" />
     <published>2025-12-26T20:00:00+08:00</published>
   
-    <updated>2025-12-27T12:24:34+08:00</updated>
+    <updated>2025-12-27T20:34:23+08:00</updated>
   
     <id>http://localhost:4000/posts/GAE/</id>
     <content type="text/html" src="http://localhost:4000/posts/GAE/" />
@@ -38,7 +38,7 @@
     
   
 
-  <summary>参考文档  # High-Dimensional Continuous Control Using Generalized Advantage Estimation  1. Abstract    策略梯度可以直接优化累计奖励： Policy gradient methods are an appealing approach in reinforcement learning because they directly optimize the cumulative reward.    但是存在两个主要问题：        样本效率：the large number of samples typically required     稳定的策略提升： the difficulty of obtaining stable and steady improvement despite...</summary>
+  <summary>针对策略梯度优势估计的问题「高方差variance、高偏差bias」提出统一框架GAE来平滑地处理variance和bias之间的平衡。</summary>
 
   </entry>
 
@@ -48,7 +48,7 @@
     <link href="http://localhost:4000/posts/multi-agent-rl/" rel="alternate" type="text/html" title="多智能体强化学习" />
     <published>2025-12-25T20:00:00+08:00</published>
   
-    <updated>2025-12-27T11:59:04+08:00</updated>
+    <updated>2025-12-27T20:34:23+08:00</updated>
   
     <id>http://localhost:4000/posts/multi-agent-rl/</id>
     <content type="text/html" src="http://localhost:4000/posts/multi-agent-rl/" />
