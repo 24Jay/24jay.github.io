@@ -1,6 +1,24 @@
 [
   
   {
+    "title": "离线强化学习之CQL",
+    "url": "/posts/CQL/",
+    "categories": "AI",
+    "tags": "RL",
+    "date": "2026-01-12 06:00:00 +0800",
+    "content": "参考文档     https://www.doubao.com/thread/w1b0ce4572028377f      BCQ   IQL   TD3+BC  "
+  },
+  
+  {
+    "title": "GEN-0 / Embodied Foundation Models That Scale with Physical Interaction",
+    "url": "/posts/gen0/",
+    "categories": "AI, Robotics",
+    "tags": "RL",
+    "date": "2025-12-29 20:00:00 +0800",
+    "content": "参考文档  #GEN-0 / Embodied Foundation Models That Scale with Physical Interaction "
+  },
+  
+  {
     "title": "广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation",
     "url": "/posts/GAE/",
     "categories": "AI",

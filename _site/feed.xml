@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-12-28T21:01:45+08:00</updated>
+  <updated>2026-01-13T00:33:48+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -13,10 +13,60 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
-  <rights> © 2025 quantux </rights>
+  <rights> © 2026 quantux </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>离线强化学习之CQL</title>
+    <link href="http://localhost:4000/posts/CQL/" rel="alternate" type="text/html" title="离线强化学习之CQL" />
+    <published>2026-01-12T06:00:00+08:00</published>
+  
+    <updated>2026-01-12T06:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/CQL/</id>
+    <content type="text/html" src="http://localhost:4000/posts/CQL/" />
+    <author>
+      <name>quantux</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+  
+
+  <summary>参考文档     https://www.doubao.com/thread/w1b0ce4572028377f      BCQ   IQL   TD3+BC</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>GEN-0 / Embodied Foundation Models That Scale with Physical Interaction</title>
+    <link href="http://localhost:4000/posts/gen0/" rel="alternate" type="text/html" title="GEN-0 / Embodied Foundation Models That Scale with Physical Interaction" />
+    <published>2025-12-29T20:00:00+08:00</published>
+  
+    <updated>2025-12-29T20:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/gen0/</id>
+    <content type="text/html" src="http://localhost:4000/posts/gen0/" />
+    <author>
+      <name>quantux</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+    <category term="Robotics" />
+    
+  
+
+  <summary>参考文档  #GEN-0 / Embodied Foundation Models That Scale with Physical Interaction</summary>
+
+  </entry>
 
   
   <entry>
@@ -87,58 +137,6 @@
   
 
   <summary>参考文档  Denoising Diffusion Probabilistic Models  李宏毅：扩散模型</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Decision Transformer: Reinforcement Learning via Sequence Modeling</title>
-    <link href="http://localhost:4000/posts/Decision-Transformer/" rel="alternate" type="text/html" title="Decision Transformer: Reinforcement Learning via Sequence Modeling" />
-    <published>2025-12-13T20:00:00+08:00</published>
-  
-    <updated>2025-12-14T19:30:18+08:00</updated>
-  
-    <id>http://localhost:4000/posts/Decision-Transformer/</id>
-    <content type="text/html" src="http://localhost:4000/posts/Decision-Transformer/" />
-    <author>
-      <name>quantux</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-    <category term="Robotics" />
-    
-  
-
-  <summary>A framework that abstracts RL as a sequence modeling problem.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>π*₀.₆​: a VLA That Learns From Experience</title>
-    <link href="http://localhost:4000/posts/%CF%800.6/" rel="alternate" type="text/html" title="π*₀.₆​: a VLA That Learns From Experience" />
-    <published>2025-12-12T20:00:00+08:00</published>
-  
-    <updated>2025-12-14T23:31:26+08:00</updated>
-  
-    <id>http://localhost:4000/posts/%CF%800.6/</id>
-    <content type="text/html" src="http://localhost:4000/posts/%CF%800.6/" />
-    <author>
-      <name>quantux</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-    <category term="Robotics" />
-    
-  
-
-  <summary>It is amazing what you can learn if you're not afraid to try.</summary>
 
   </entry>
 
