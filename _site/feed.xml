@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-01-13T23:44:24+08:00</updated>
+  <updated>2026-01-14T21:54:59+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -20,14 +20,14 @@
 
   
   <entry>
-    <title>离线强化学习之CQL</title>
-    <link href="http://localhost:4000/posts/CQL/" rel="alternate" type="text/html" title="离线强化学习之CQL" />
+    <title>离线强化学习</title>
+    <link href="http://localhost:4000/posts/offline-rl/" rel="alternate" type="text/html" title="离线强化学习" />
     <published>2026-01-12T06:00:00+08:00</published>
   
     <updated>2026-01-12T06:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/CQL/</id>
-    <content type="text/html" src="http://localhost:4000/posts/CQL/" />
+    <id>http://localhost:4000/posts/offline-rl/</id>
+    <content type="text/html" src="http://localhost:4000/posts/offline-rl/" />
     <author>
       <name>quantux</name>
     </author>
@@ -38,7 +38,7 @@
     
   
 
-  <summary>参考文档     https://www.doubao.com/thread/w1b0ce4572028377f      BCQ   IQL   TD3+BC</summary>
+  <summary>参考文档     https://www.doubao.com/thread/w1b0ce4572028377f      BCQ   IQL   TD3+BC   1. 离线强化学习  2. CQL: Conservative Q-Learning for Offline Reinforcement Learning    https://readpaper.com/pdf-annotate/note?pdfId=4544118443910111233&amp;amp;noteId=3194578978157556992   Motivation：</summary>
 
   </entry>
 
