@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-01-14T21:54:59+08:00</updated>
+  <updated>2026-02-01T16:10:43+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,78 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Simple VLA-RL</title>
+    <link href="http://localhost:4000/posts/simple-vla-rl/" rel="alternate" type="text/html" title="Simple VLA-RL" />
+    <published>2026-01-31T18:00:00+08:00</published>
+  
+    <updated>2026-01-31T18:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/simple-vla-rl/</id>
+    <content type="text/html" src="http://localhost:4000/posts/simple-vla-rl/" />
+    <author>
+      <name>quantux</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+  
+
+  <summary>SimpleVLA-RL   1. Simple VLA-RL     Simple VLA-RL: scaling VLA Training via Reinforcement Learning: https://github.com/PRIME-RL/SimpleVLA-RL   研究背景和核心问题 问题：针对机器人领域VLA模型主要采用大规模预训练和有监督微调（supervised fine-tune）的方案，存在两个问题    样本效率：数据稀缺、高质量机器人轨迹采集成本高   泛化性问题：针对分布偏移（distribution shift）场景适应性差   思路：RL在推理大模型领域的成功能否复制应用到VLA模型？  Simple VLA-RL：    基于veRL（Volcano Engine Reinforcement Learning）   VLA-specific ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>扩散模型</title>
+    <link href="http://localhost:4000/posts/diffusion-model/" rel="alternate" type="text/html" title="扩散模型" />
+    <published>2026-01-18T06:00:00+08:00</published>
+  
+    <updated>2026-01-18T06:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/diffusion-model/</id>
+    <content type="text/html" src="http://localhost:4000/posts/diffusion-model/" />
+    <author>
+      <name>quantux</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+  
+
+  <summary>guide line    热力学扩散模型   DDPM   DDIM   Flow Matching   B站：扩散模型基础  1. 扩散模型基础  扩散模型：模拟热力学扩散过程来构建的图片生成式神经网络模型。  高维空间中图片的表示 高纬向量空间中图片的表示：每一张图片对应的就是高维向量空间中的一个点。  郎之万动力学方程Langevin Equation 郎之万动力学方程（Langevin Equation）是 1908 年由保罗・朗之万提出的随机微分方程，核心是在牛顿第二定律中引入阻尼力与随机涨落力，用于描述布朗运动等含随机因素的系统动力学，是连接微观随机过程与宏观统计规律的关键工具。  2.使用非平衡热力学的深度无监督学习    Deep Unsupervised Learning using Nonequilibrium Thermodynamics： https://r...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>sim2real</title>
+    <link href="http://localhost:4000/posts/sim2real/" rel="alternate" type="text/html" title="sim2real" />
+    <published>2026-01-14T06:00:00+08:00</published>
+  
+    <updated>2026-01-14T06:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/sim2real/</id>
+    <content type="text/html" src="http://localhost:4000/posts/sim2real/" />
+    <author>
+      <name>quantux</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+  
+
+  <summary>Domain randomization for transferring deep neural networks from simulation to the real world    https://readpaper.com/pdf-annotate/note?pdfId=4557557081012445185&amp;amp;noteId=3173811748193745664</summary>
+
+  </entry>
 
   
   <entry>
@@ -65,78 +137,6 @@
   
 
   <summary>参考文档  #GEN-0 / Embodied Foundation Models That Scale with Physical Interaction</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation</title>
-    <link href="http://localhost:4000/posts/GAE/" rel="alternate" type="text/html" title="广义优势估计：High-dimensional Continuous Control Using Generalized Advantage Estimation" />
-    <published>2025-12-26T20:00:00+08:00</published>
-  
-    <updated>2025-12-28T16:44:35+08:00</updated>
-  
-    <id>http://localhost:4000/posts/GAE/</id>
-    <content type="text/html" src="http://localhost:4000/posts/GAE/" />
-    <author>
-      <name>quantux</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-  
-
-  <summary>针对策略梯度优势估计的问题「高方差variance、高偏差bias」提出统一框架GAE来平滑地处理variance和bias之间的平衡。</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>多智能体强化学习</title>
-    <link href="http://localhost:4000/posts/multi-agent-rl/" rel="alternate" type="text/html" title="多智能体强化学习" />
-    <published>2025-12-25T20:00:00+08:00</published>
-  
-    <updated>2025-12-27T20:34:23+08:00</updated>
-  
-    <id>http://localhost:4000/posts/multi-agent-rl/</id>
-    <content type="text/html" src="http://localhost:4000/posts/multi-agent-rl/" />
-    <author>
-      <name>quantux</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-  
-
-  <summary>参考文档  # Transformer-based Multi-Agent Reinforcement Learning for Generalization of Heterogeneous Multi-Robot Cooperation</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Denoising Diffusion Probabilistic Models</title>
-    <link href="http://localhost:4000/posts/diffusion-model/" rel="alternate" type="text/html" title="Denoising Diffusion Probabilistic Models" />
-    <published>2025-12-14T20:00:00+08:00</published>
-  
-    <updated>2025-12-14T20:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/diffusion-model/</id>
-    <content type="text/html" src="http://localhost:4000/posts/diffusion-model/" />
-    <author>
-      <name>quantux</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-  
-
-  <summary>参考文档  Denoising Diffusion Probabilistic Models  李宏毅：扩散模型</summary>
 
   </entry>
 
