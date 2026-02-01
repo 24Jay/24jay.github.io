@@ -105,15 +105,18 @@ $$
 
 ## 4. GRPO优化目标
 ![Simple VLA-RL](assets/img/posts/20260131/simpleVLA.png)
-#### 奖励模型：
+#### 1. 奖励模型：
 SimpleVLA-RL 采用一个简单的二元奖励函数进行训练，成功轨迹中的所有token都分配了1的奖励，而不成功轨迹的token都分配0的奖励。
+
 $$
-R(a_{i,t} \mid s_{i,t}) = \begin{cases} 1, & \text{is\_successful}[\text{traj}_i(a_i, s_i)] \\ 0, & \text{otherwise} \end{cases}
+R(a_{i,t} \mid s_{i,t}) = \begin{cases} 1, & {is\_successful}[\text{traj}_i(a_i, s_i)] \\ 0, & \text{otherwise} \end{cases}
 $$
-#### 优化目标：
+
+#### 2. 优化目标：
 $$
 J(\theta) = \mathbb{E}_{s_0 \sim \mathcal{D},\ \{a_t\}_{i=1}^G \sim \pi_{\theta_{\text{old}}}(\cdot \mid s_t)} \left[ \frac{1}{G} \sum_{i=1}^G \frac{1}{|a_i|} \sum_{t=1}^{|a_i|} \min\left( r_{i,t}(\theta) \hat{A}_i,\ \operatorname{clip}\left(r_{i,t}(\theta),\ 1 - \varepsilon_{\text{low}},\ 1 + \varepsilon_{\text{high}}\right) \hat{A}_i \right) \right]
 $$
+
 - 删除KL散度：KL散度限制了策略的探索能力
 - Clip Higher提升探索：clip range从[0.8,1.2]修改为[0.8,1.28]
 - Higher Rollout Temperature提升探索：T从1.0提升为1.6
@@ -122,7 +125,7 @@ a_t = y_t \in \mathcal{V},\ \text{where}\ y_t \sim \pi_{\theta}(\cdot \mid s_t) 
 $$
 其中$f_{\theta}(s_t)\in \mathbb{E}^{|v|}$代表了LLM输出的logit输出，T代表温度控制了采样的随机性。
 
-#### 约束条件「Dynamic Sampling」：
+#### 3. 约束条件「Dynamic Sampling」：
 **问题**：
 当所有轨迹被分配相同的奖励时，Critic-free强化学习算法存在梯度消失的问题。例如GRPO算法，当所有的轨迹奖励相同，优势函数预估会变成0进而导致null gradients和unstable训练。
 
@@ -130,14 +133,21 @@ $$
 During rollout, we exclude groups in which all trajectories either succeed or fail。
 
 $$
-0 < \left\{\text{traj}_i(a_i, s_i) \mid \text{is\_successful}[\text{traj}_i(a_i, s_i)] \right\} < G
+0 < \left\{\text{traj}_i(a_i, s_i) \mid is\_successful[\text{traj}_i(a_i, s_i)] \right\} < G
 $$
-#### 重要性：
+
+#### 4. 重要性
+
 $$
 r_{i,t}(\theta) = \frac{\pi_{\theta}(a_{i,t} \mid s_{i,t})}{\pi_{\theta_{\text{old}}}(a_{i,t} \mid s_{i,t})}
 $$
-#### 归一化优势函数：
+
+#### 5. 归一化优势函数
+
 $$
 \hat{A}_i = \frac{R_i - \text{mean}\left(\{R_i\}_{i=1}^G\right)}{\text{std}\left(\{R_i\}_{i=1}^G\right)}
 $$
 
+
+
+## 5. 仿真评测

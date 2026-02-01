@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Simple VLA-RL" />
 <meta name="twitter:site" content="@Qx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-01T16:11:50+08:00","datePublished":"2026-01-31T18:00:00+08:00","description":"SimpleVLA-RL","headline":"Simple VLA-RL","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/simple-vla-rl/"},"url":"http://localhost:4000/posts/simple-vla-rl/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-01T17:09:50+08:00","datePublished":"2026-01-31T18:00:00+08:00","description":"SimpleVLA-RL","headline":"Simple VLA-RL","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/simple-vla-rl/"},"url":"http://localhost:4000/posts/simple-vla-rl/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -654,6 +654,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -829,7 +840,7 @@
 
 <time
   
-  data-ts="1769933510"
+  data-ts="1769936990"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -882,7 +893,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1787 words"
+  title="1795 words"
 >
   <em>9 min</em> read</span>
 
@@ -1064,11 +1075,14 @@
 
 <h2 id="4-grpo优化目标"><span class="me-2">4. GRPO优化目标</span><a href="#4-grpo优化目标" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p><a href="/assets/img/posts/20260131/simpleVLA.png" class="popup img-link shimmer"><img src="/assets/img/posts/20260131/simpleVLA.png" alt="Simple VLA-RL" loading="lazy"></a></p>
-<h4 id="奖励模型"><span class="me-2">奖励模型：</span><a href="#奖励模型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>SimpleVLA-RL 采用一个简单的二元奖励函数进行训练，成功轨迹中的所有token都分配了1的奖励，而不成功轨迹的token都分配0的奖励。
-\(R(a_{i,t} \mid s_{i,t}) = \begin{cases} 1, &amp; \text{is\_successful}[\text{traj}_i(a_i, s_i)] \\ 0, &amp; \text{otherwise} \end{cases}\)</p>
-<h4 id="优化目标"><span class="me-2">优化目标：</span><a href="#优化目标" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="1-奖励模型"><span class="me-2">1. 奖励模型：</span><a href="#1-奖励模型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p>SimpleVLA-RL 采用一个简单的二元奖励函数进行训练，成功轨迹中的所有token都分配了1的奖励，而不成功轨迹的token都分配0的奖励。</p>
+
+\[R(a_{i,t} \mid s_{i,t}) = \begin{cases} 1, &amp; {is\_successful}[\text{traj}_i(a_i, s_i)] \\ 0, &amp; \text{otherwise} \end{cases}\]
+
+<h4 id="2-优化目标"><span class="me-2">2. 优化目标：</span><a href="#2-优化目标" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>\(J(\theta) = \mathbb{E}_{s_0 \sim \mathcal{D},\ \{a_t\}_{i=1}^G \sim \pi_{\theta_{\text{old}}}(\cdot \mid s_t)} \left[ \frac{1}{G} \sum_{i=1}^G \frac{1}{|a_i|} \sum_{t=1}^{|a_i|} \min\left( r_{i,t}(\theta) \hat{A}_i,\ \operatorname{clip}\left(r_{i,t}(\theta),\ 1 - \varepsilon_{\text{low}},\ 1 + \varepsilon_{\text{high}}\right) \hat{A}_i \right) \right]\)</p>
+
 <ul>
   <li>删除KL散度：KL散度限制了策略的探索能力</li>
   <li>Clip Higher提升探索：clip range从[0.8,1.2]修改为[0.8,1.28]</li>
@@ -1077,19 +1091,24 @@
 其中$f_{\theta}(s_t)\in \mathbb{E}^{|v|}$代表了LLM输出的logit输出，T代表温度控制了采样的随机性。</li>
 </ul>
 
-<h4 id="约束条件dynamic-sampling"><span class="me-2">约束条件「Dynamic Sampling」：</span><a href="#约束条件dynamic-sampling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="3-约束条件dynamic-sampling"><span class="me-2">3. 约束条件「Dynamic Sampling」：</span><a href="#3-约束条件dynamic-sampling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p><strong>问题</strong>：
 当所有轨迹被分配相同的奖励时，Critic-free强化学习算法存在梯度消失的问题。例如GRPO算法，当所有的轨迹奖励相同，优势函数预估会变成0进而导致null gradients和unstable训练。</p>
 
 <p><strong>方案</strong>：
 During rollout, we exclude groups in which all trajectories either succeed or fail。</p>
 
-<p>\(0 &lt; \left\{\text{traj}_i(a_i, s_i) \mid \text{is\_successful}[\text{traj}_i(a_i, s_i)] \right\} &lt; G\)</p>
-<h4 id="重要性"><span class="me-2">重要性：</span><a href="#重要性" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>\(r_{i,t}(\theta) = \frac{\pi_{\theta}(a_{i,t} \mid s_{i,t})}{\pi_{\theta_{\text{old}}}(a_{i,t} \mid s_{i,t})}\)</p>
-<h4 id="归一化优势函数"><span class="me-2">归一化优势函数：</span><a href="#归一化优势函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>\(\hat{A}_i = \frac{R_i - \text{mean}\left(\{R_i\}_{i=1}^G\right)}{\text{std}\left(\{R_i\}_{i=1}^G\right)}\)</p>
+\[0 &lt; \left\{\text{traj}_i(a_i, s_i) \mid is\_successful[\text{traj}_i(a_i, s_i)] \right\} &lt; G\]
 
+<h4 id="4-重要性"><span class="me-2">4. 重要性</span><a href="#4-重要性" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+\[r_{i,t}(\theta) = \frac{\pi_{\theta}(a_{i,t} \mid s_{i,t})}{\pi_{\theta_{\text{old}}}(a_{i,t} \mid s_{i,t})}\]
+
+<h4 id="5-归一化优势函数"><span class="me-2">5. 归一化优势函数</span><a href="#5-归一化优势函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+\[\hat{A}_i = \frac{R_i - \text{mean}\left(\{R_i\}_{i=1}^G\right)}{\text{std}\left(\{R_i\}_{i=1}^G\right)}\]
+
+<h2 id="5-仿真评测"><span class="me-2">5. 仿真评测</span><a href="#5-仿真评测" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
   </div>
 
