@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Simple VLA-RL" />
 <meta name="twitter:site" content="@Qx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-01T17:09:50+08:00","datePublished":"2026-01-31T18:00:00+08:00","description":"SimpleVLA-RL","headline":"Simple VLA-RL","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/simple-vla-rl/"},"url":"http://localhost:4000/posts/simple-vla-rl/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-01T22:12:27+08:00","datePublished":"2026-01-31T18:00:00+08:00","description":"SimpleVLA-RL","headline":"Simple VLA-RL","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/simple-vla-rl/"},"url":"http://localhost:4000/posts/simple-vla-rl/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -773,6 +773,39 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -840,7 +873,7 @@
 
 <time
   
-  data-ts="1769936990"
+  data-ts="1769955147"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -893,9 +926,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1795 words"
+  title="1880 words"
 >
-  <em>9 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -1109,6 +1142,34 @@ During rollout, we exclude groups in which all trajectories either succeed or fa
 \[\hat{A}_i = \frac{R_i - \text{mean}\left(\{R_i\}_{i=1}^G\right)}{\text{std}\left(\{R_i\}_{i=1}^G\right)}\]
 
 <h2 id="5-仿真评测"><span class="me-2">5. 仿真评测</span><a href="#5-仿真评测" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h4 id="1-基于openvla-opt做以下修改"><span class="me-2">1. 基于OpenVLA-OPT做以下修改</span><a href="#1-基于openvla-opt做以下修改" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>状态输入：single-view images、language instructions、robot proprioceptive states</li>
+  <li>employ only parallel decoding and action chunking designs</li>
+  <li>We use the LLaMA2 output head to generate action tokens and the cross-entropy loss, whereas the official model uses an MLP to generate continuous actions and L1 regression.</li>
+  <li>从0开始训练，而不是使用OpenVLA-OPT的checkpoint</li>
+</ul>
+
+<h4 id="2-baselines"><span class="me-2">2. Baselines</span><a href="#2-baselines" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>UniVLA</li>
+  <li>RDT-1B</li>
+  <li>$\pi_0$</li>
+  <li>$\pi_{fast}$</li>
+  <li>Nora</li>
+  <li>Open-VLA</li>
+  <li>Octo</li>
+  <li>DP</li>
+  <li>DP3</li>
+</ul>
+
+<h4 id="3-benchmarks"><span class="me-2">3. Benchmarks</span><a href="#3-benchmarks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>LIBERO</li>
+  <li>RoboTwin1.0</li>
+  <li>RoboTwin2.0</li>
+</ul>
+
 
   </div>
 

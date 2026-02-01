@@ -148,6 +148,30 @@ $$
 \hat{A}_i = \frac{R_i - \text{mean}\left(\{R_i\}_{i=1}^G\right)}{\text{std}\left(\{R_i\}_{i=1}^G\right)}
 $$
 
-
-
 ## 5. 仿真评测
+#### 1. 基于OpenVLA-OPT做以下修改
+- 状态输入：single-view images、language instructions、robot proprioceptive states
+- employ only parallel decoding and action chunking designs
+- We use the LLaMA2 output head to generate action tokens and the cross-entropy loss, whereas the official model uses an MLP to generate continuous actions and L1 regression.
+- 从0开始训练，而不是使用OpenVLA-OPT的checkpoint
+
+#### 2. Baselines
+- UniVLA
+- RDT-1B
+- $\pi_0$
+- $\pi_{fast}$
+- Nora
+- Open-VLA
+- Octo
+- DP
+- DP3
+
+
+#### 3. Benchmarks
+- LIBERO
+- RoboTwin1.0
+- RoboTwin2.0
+
+
+
+
