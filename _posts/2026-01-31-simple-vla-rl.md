@@ -13,11 +13,10 @@ pin: false
 - [SimpleVLA-RL](https://readpaper.com/pdf-annotate/note?pdfId=3017335060778541824&tab=copilot&noteId=3196855852258653952)
 
 
-## 1. Simple VLA-RL
+## 1. 研究背景
 
 > Simple VLA-RL: scaling VLA Training via Reinforcement Learning: https://github.com/PRIME-RL/SimpleVLA-RL
 
-### 研究背景和核心问题
 **问题**：针对机器人领域VLA模型主要采用大规模预训练和有监督微调（supervised fine-tune）的方案，存在两个问题
 - 样本效率：数据稀缺、高质量机器人轨迹采集成本高
 - 泛化性问题：针对分布偏移（distribution shift）场景适应性差
