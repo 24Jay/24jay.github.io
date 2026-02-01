@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-02-01T16:10:43+08:00</updated>
+  <updated>2026-02-01T17:08:57+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/simple-vla-rl/" rel="alternate" type="text/html" title="Simple VLA-RL" />
     <published>2026-01-31T18:00:00+08:00</published>
   
-    <updated>2026-01-31T18:00:00+08:00</updated>
+    <updated>2026-02-01T16:11:50+08:00</updated>
   
     <id>http://localhost:4000/posts/simple-vla-rl/</id>
     <content type="text/html" src="http://localhost:4000/posts/simple-vla-rl/" />
@@ -38,7 +38,7 @@
     
   
 
-  <summary>SimpleVLA-RL   1. Simple VLA-RL     Simple VLA-RL: scaling VLA Training via Reinforcement Learning: https://github.com/PRIME-RL/SimpleVLA-RL   研究背景和核心问题 问题：针对机器人领域VLA模型主要采用大规模预训练和有监督微调（supervised fine-tune）的方案，存在两个问题    样本效率：数据稀缺、高质量机器人轨迹采集成本高   泛化性问题：针对分布偏移（distribution shift）场景适应性差   思路：RL在推理大模型领域的成功能否复制应用到VLA模型？  Simple VLA-RL：    基于veRL（Volcano Engine Reinforcement Learning）   VLA-specific ...</summary>
+  <summary>SimpleVLA-RL   1. 研究背景     Simple VLA-RL: scaling VLA Training via Reinforcement Learning: https://github.com/PRIME-RL/SimpleVLA-RL   问题：针对机器人领域VLA模型主要采用大规模预训练和有监督微调（supervised fine-tune）的方案，存在两个问题    样本效率：数据稀缺、高质量机器人轨迹采集成本高   泛化性问题：针对分布偏移（distribution shift）场景适应性差   思路：RL在推理大模型领域的成功能否复制应用到VLA模型？  Simple VLA-RL：    基于veRL（Volcano Engine Reinforcement Learning）   VLA-specific trajectory sampling...</summary>
 
   </entry>
 
