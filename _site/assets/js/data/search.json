@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "大模型强化学习算法推导",
+    "url": "/posts/rl-llm/",
+    "categories": "AI",
+    "tags": "RL",
+    "date": "2026-02-01 20:00:00 +0800",
+    "content": "   PPO   GRPO   DAPO   GSPO   SAPO   GDPO   "
+  },
+  
+  {
     "title": "Simple VLA-RL",
     "url": "/posts/simple-vla-rl/",
     "categories": "AI",

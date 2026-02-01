@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Qx</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-02-01T22:59:04+08:00</updated>
+  <updated>2026-02-01T23:07:10+08:00</updated>
   <author>
     <name>quantux</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,35 @@
 
   
   <entry>
+    <title>大模型强化学习算法推导</title>
+    <link href="http://localhost:4000/posts/rl-llm/" rel="alternate" type="text/html" title="大模型强化学习算法推导" />
+    <published>2026-02-01T20:00:00+08:00</published>
+  
+    <updated>2026-02-01T20:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/rl-llm/</id>
+    <content type="text/html" src="http://localhost:4000/posts/rl-llm/" />
+    <author>
+      <name>quantux</name>
+    </author>
+
+  
+    
+    <category term="AI" />
+    
+  
+
+  <summary>PPO   GRPO   DAPO   GSPO   SAPO   GDPO</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Simple VLA-RL</title>
     <link href="http://localhost:4000/posts/simple-vla-rl/" rel="alternate" type="text/html" title="Simple VLA-RL" />
     <published>2026-01-31T18:00:00+08:00</published>
   
-    <updated>2026-02-01T22:12:27+08:00</updated>
+    <updated>2026-02-01T22:59:23+08:00</updated>
   
     <id>http://localhost:4000/posts/simple-vla-rl/</id>
     <content type="text/html" src="http://localhost:4000/posts/simple-vla-rl/" />
@@ -111,32 +135,6 @@
   
 
   <summary>参考文档     https://www.doubao.com/thread/w1b0ce4572028377f      BCQ   IQL   TD3+BC   1. 离线强化学习  2. CQL: Conservative Q-Learning for Offline Reinforcement Learning    https://readpaper.com/pdf-annotate/note?pdfId=4544118443910111233&amp;amp;noteId=3194578978157556992   Motivation：</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>GEN-0 / Embodied Foundation Models That Scale with Physical Interaction</title>
-    <link href="http://localhost:4000/posts/gen0/" rel="alternate" type="text/html" title="GEN-0 / Embodied Foundation Models That Scale with Physical Interaction" />
-    <published>2025-12-29T20:00:00+08:00</published>
-  
-    <updated>2025-12-29T20:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/gen0/</id>
-    <content type="text/html" src="http://localhost:4000/posts/gen0/" />
-    <author>
-      <name>quantux</name>
-    </author>
-
-  
-    
-    <category term="AI" />
-    
-    <category term="Robotics" />
-    
-  
-
-  <summary>参考文档  #GEN-0 / Embodied Foundation Models That Scale with Physical Interaction</summary>
 
   </entry>
 
