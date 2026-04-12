@@ -1,240 +1,358 @@
 /* ============================================
-   技术博客写作主题增强
+   技术博客写作主题增强 - 强制覆盖版
    ============================================ */
 
-/* 编辑区背景 */
-.markdown-source-view .cm-editor {
-  background: linear-gradient(to bottom, var(--background-primary) 0%, var(--background-primary-alt) 100%);
+/* 强制覆盖所有元素 */
+body {
+  --text-accent: #0969da !important;
+  --link-color: #0969da !important;
 }
 
-/* 标题样式 */
-.markdown-preview-view h1,
-.markdown-source-view .cm-header-1 {
-  font-size: 2em;
-  font-weight: 700;
-  color: var(--text-accent);
-  border-bottom: 2px solid var(--background-modifier-border);
-  padding-bottom: 0.3em;
-  margin-top: 1.5em;
+/* ========== 编辑模式标题增强 ========== */
+.cm-header-1 {
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+  color: var(--text-accent) !important;
+  border-bottom: 3px solid var(--text-accent) !important;
+  padding-bottom: 0.3em !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.8em !important;
 }
 
-.markdown-preview-view h2,
-.markdown-source-view .cm-header-2 {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: var(--text-normal);
-  border-left: 4px solid var(--text-accent);
-  padding-left: 0.5em;
-  margin-top: 1.3em;
+.cm-header-2 {
+  font-size: 1.7em !important;
+  font-weight: 600 !important;
+  color: var(--text-normal) !important;
+  border-left: 5px solid var(--text-accent) !important;
+  padding-left: 0.6em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.6em !important;
 }
 
-.markdown-preview-view h3,
-.markdown-source-view .cm-header-3 {
-  font-size: 1.25em;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-top: 1.2em;
+.cm-header-3 {
+  font-size: 1.4em !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.5em !important;
 }
 
-/* 代码块美化 */
-.markdown-preview-view pre,
-.markdown-source-view .HyperMD-codeblock {
-  background: var(--code-background) !important;
-  border-radius: 8px;
-  border: 1px solid var(--background-modifier-border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* ========== 预览模式标题增强 ========== */
+.markdown-preview-view h1 {
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+  color: var(--text-accent) !important;
+  border-bottom: 3px solid var(--text-accent) !important;
+  padding-bottom: 0.3em !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.8em !important;
 }
 
+.markdown-preview-view h2 {
+  font-size: 1.7em !important;
+  font-weight: 600 !important;
+  color: var(--text-normal) !important;
+  border-left: 5px solid var(--text-accent) !important;
+  padding-left: 0.6em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.6em !important;
+}
+
+.markdown-preview-view h3 {
+  font-size: 1.4em !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* ========== 代码块强制美化 ========== */
+/* 编辑模式 */
+.HyperMD-codeblock {
+  background-color: #f6f8fa !important;
+  border-radius: 10px !important;
+  border: 1px solid #d0d7de !important;
+  padding: 16px !important;
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* 预览模式 */
+.markdown-preview-view pre {
+  background-color: #f6f8fa !important;
+  border-radius: 10px !important;
+  border: 1px solid #d0d7de !important;
+  padding: 16px !important;
+  margin: 1.5em 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  overflow-x: auto !important;
+}
+
+.markdown-preview-view pre code {
+  background: transparent !important;
+  color: #24292f !important;
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* 行内代码 */
 .markdown-preview-view code {
-  background: var(--code-background);
-  color: var(--code-normal);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.9em;
+  background-color: rgba(175, 184, 193, 0.2) !important;
+  color: #cf222e !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 4px !important;
+  font-size: 0.9em !important;
+  font-family: "JetBrains Mono", "Fira Code", monospace !important;
 }
 
-/* 引用块样式 - 类似 Chirpy 主题 */
-.markdown-preview-view blockquote,
-.markdown-source-view .HyperMD-quote {
-  background: var(--background-primary-alt);
-  border-left: 4px solid var(--text-accent);
-  padding: 1em 1.2em;
-  margin: 1em 0;
-  border-radius: 0 8px 8px 0;
-  color: var(--text-muted);
+/* 编辑模式行内代码 */
+.cm-inline-code {
+  background-color: rgba(175, 184, 193, 0.2) !important;
+  color: #cf222e !important;
+  padding: 0.1em 0.3em !important;
+  border-radius: 4px !important;
+  font-family: "JetBrains Mono", "Fira Code", monospace !important;
 }
 
-/* 提示框样式 */
-.markdown-preview-view blockquote[data-callout],
-.markdown-preview-view .callout {
-  border-radius: 8px;
-  padding: 1em;
-  margin: 1em 0;
+/* ========== 引用块强制美化 ========== */
+/* 编辑模式 */
+.HyperMD-quote {
+  background-color: #f6f8fa !important;
+  border-left: 4px solid #0969da !important;
+  padding: 12px 16px !important;
+  margin: 1em 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  color: #57606a !important;
+  font-style: italic !important;
 }
 
-/* 表格美化 */
+/* 预览模式 */
+.markdown-preview-view blockquote {
+  background-color: #f6f8fa !important;
+  border-left: 4px solid #0969da !important;
+  padding: 12px 16px !important;
+  margin: 1em 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  color: #57606a !important;
+  font-style: italic !important;
+}
+
+.markdown-preview-view blockquote p {
+  margin: 0.5em 0 !important;
+}
+
+.markdown-preview-view blockquote p:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-preview-view blockquote p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ========== 表格强制美化 ========== */
 .markdown-preview-view table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 1em 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.5em 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #d0d7de !important;
 }
 
 .markdown-preview-view th {
-  background: var(--background-modifier-hover);
-  font-weight: 600;
-  text-align: left;
-  padding: 12px 16px;
-  border-bottom: 2px solid var(--background-modifier-border);
+  background-color: #f6f8fa !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  border-bottom: 2px solid #d0d7de !important;
+  color: #24292f !important;
 }
 
 .markdown-preview-view td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 10px 16px !important;
+  border-bottom: 1px solid #d0d7de !important;
+  color: #24292f !important;
 }
 
 .markdown-preview-view tr:last-child td {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
-.markdown-preview-view tr:hover {
-  background: var(--background-modifier-hover);
+.markdown-preview-view tr:hover td {
+  background-color: #f6f8fa !important;
 }
 
-/* 数学公式居中 */
-.markdown-preview-view mjx-container {
-  text-align: center;
-  overflow-x: auto;
-  padding: 0.5em 0;
-}
-
-/* 图片居中 + 圆角 */
+/* ========== 图片强制美化 ========== */
 .markdown-preview-view img {
-  display: block;
-  margin: 1.5em auto;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block !important;
+  margin: 1.5em auto !important;
+  max-width: 100% !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid #d0d7de !important;
 }
 
-/* 图片说明 */
-.markdown-preview-view img + em {
-  display: block;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9em;
-  margin-top: -1em;
-  margin-bottom: 1.5em;
-}
-
-/* 列表样式 */
+/* ========== 列表强制美化 ========== */
 .markdown-preview-view ul > li,
 .markdown-preview-view ol > li {
-  margin: 0.4em 0;
+  margin: 0.5em 0 !important;
+  line-height: 1.7 !important;
 }
 
 .markdown-preview-view ul > li::marker {
-  color: var(--text-accent);
+  color: #0969da !important;
+  font-size: 1.1em !important;
 }
 
-/* 任务列表 */
-.markdown-preview-view .task-list-item-checkbox {
-  width: 1.2em;
-  height: 1.2em;
-  border-radius: 4px;
-  border: 2px solid var(--text-accent);
+/* ========== 任务列表强制美化 ========== */
+.task-list-item-checkbox {
+  width: 1.3em !important;
+  height: 1.3em !important;
+  border-radius: 5px !important;
+  border: 2px solid #0969da !important;
+  background: white !important;
+  cursor: pointer !important;
 }
 
-.markdown-preview-view .task-list-item-checkbox:checked {
-  background: var(--text-accent);
+.task-list-item-checkbox:checked {
+  background-color: #0969da !important;
+  border-color: #0969da !important;
 }
 
-/* 链接样式 */
+/* ========== 链接强制美化 ========== */
 .markdown-preview-view a {
-  color: var(--text-accent);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--text-accent);
-  transition: all 0.2s ease;
+  color: #0969da !important;
+  text-decoration: none !important;
+  border-bottom: 1px dashed #0969da !important;
+  transition: all 0.2s ease !important;
 }
 
 .markdown-preview-view a:hover {
-  border-bottom-style: solid;
-  background: var(--background-modifier-hover);
+  border-bottom-style: solid !important;
+  background-color: rgba(9, 105, 218, 0.08) !important;
 }
 
-/* Front matter (Properties) 美化 */
+/* ========== Front matter 强制美化 ========== */
 .metadata-container {
-  background: var(--background-primary-alt);
-  border-radius: 8px;
-  padding: 1em;
-  margin-bottom: 1.5em;
-  border: 1px solid var(--background-modifier-border);
+  background-color: #f6f8fa !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  margin-bottom: 1.5em !important;
+  border: 1px solid #d0d7de !important;
 }
 
 .metadata-property-key {
-  font-weight: 600;
-  color: var(--text-accent);
+  font-weight: 600 !important;
+  color: #0969da !important;
 }
 
-/* 分割线 */
+.metadata-property-value {
+  color: #24292f !important;
+}
+
+/* ========== 分割线强制美化 ========== */
 .markdown-preview-view hr {
-  border: none;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--background-modifier-border), transparent);
-  margin: 2em 0;
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(to right, transparent, #d0d7de, transparent) !important;
+  margin: 2.5em 0 !important;
 }
 
-/* 滚动条美化 */
+/* ========== 滚动条强制美化 ========== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px !important;
+  height: 10px !important;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-primary);
+  background: transparent !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--background-modifier-border);
-  border-radius: 4px;
+  background: #c1c1c1 !important;
+  border-radius: 5px !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: #a8a8a8 !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
 }
 
-/* 文件导航栏 */
+/* ========== 文件导航栏强制美化 ========== */
 .nav-file-title {
-  border-radius: 4px;
-  margin: 2px 8px;
-  padding: 4px 8px;
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  padding: 5px 10px !important;
+  transition: all 0.15s ease !important;
 }
 
 .nav-file-title:hover {
-  background: var(--background-modifier-hover);
+  background-color: rgba(9, 105, 218, 0.08) !important;
 }
 
 .nav-file-title.is-active {
-  background: var(--background-modifier-hover);
-  color: var(--text-accent);
-  font-weight: 600;
+  background-color: rgba(9, 105, 218, 0.12) !important;
+  color: #0969da !important;
+  font-weight: 600 !important;
 }
 
-/* 文件夹样式 */
+/* 左侧栏文件夹 */
 .nav-folder-title {
-  font-weight: 600;
-  color: var(--text-normal);
+  font-weight: 600 !important;
+  color: #24292f !important;
+  padding: 5px 10px !important;
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
 }
 
-/* 特殊文件夹图标 */
-.nav-folder-children .nav-folder:nth-child(1) .nav-folder-title-content::before {
-  content: "📁 ";
+.nav-folder-title:hover {
+  background-color: rgba(9, 105, 218, 0.08) !important;
 }
 
-/* 右侧边栏标签页 */
-.workspace-tab-header.is-active {
-  color: var(--text-accent);
+/* ========== 深色模式适配 ========== */
+.theme-dark body {
+  --text-accent: #58a6ff !important;
+}
+
+.theme-dark .markdown-preview-view pre,
+.theme-dark .HyperMD-codeblock {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+.theme-dark .markdown-preview-view blockquote,
+.theme-dark .HyperMD-quote {
+  background-color: #161b22 !important;
+  border-left-color: #58a6ff !important;
+  color: #8b949e !important;
+}
+
+.theme-dark .markdown-preview-view th {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+.theme-dark .markdown-preview-view td {
+  border-color: #30363d !important;
+}
+
+.theme-dark .metadata-container {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+.theme-dark .markdown-preview-view code {
+  background-color: rgba(110, 118, 129, 0.4) !important;
+  color: #ff7b72 !important;
+}
+
+.theme-dark .cm-inline-code {
+  background-color: rgba(110, 118, 129, 0.4) !important;
+  color: #ff7b72 !important;
 }

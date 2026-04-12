@@ -1,48 +1,159 @@
 /* ============================================
-   数学公式显示优化
+   数学公式显示优化 - 强制覆盖版
    ============================================ */
 
-/* 行内公式 */
+/* ========== 行内公式 ========== */
+/* 编辑模式 */
+.cm-math {
+  color: #24292f !important;
+  font-family: "KaTeX_Math", "Times New Roman", serif !important;
+  font-style: italic !important;
+}
+
+.cm-inline-math {
+  color: #cf222e !important;
+  font-family: "KaTeX_Math", "Times New Roman", serif !important;
+}
+
+.cm-inline-math .cm-math-marker {
+  color: #8c959f !important;
+  opacity: 0.6 !important;
+}
+
+/* 预览模式 */
 .markdown-preview-view mjx-container:not([display="true"]) {
-  font-size: 0.95em;
-  color: var(--text-normal);
+  font-size: 1em !important;
+  color: #24292f !important;
+  font-family: "KaTeX_Math", "Times New Roman", serif !important;
+  padding: 0 0.2em !important;
 }
 
-/* 块级公式 */
+/* ========== 块级公式 ========== */
+/* 编辑模式 */
+.cm-block-math {
+  font-size: 1.1em !important;
+  text-align: center !important;
+  margin: 1.5em 0 !important;
+}
+
+.cm-block-math .cm-math-marker {
+  color: #8c959f !important;
+  opacity: 0.6 !important;
+}
+
+/* 预览模式 */
 .markdown-preview-view mjx-container[display="true"] {
-  font-size: 1.1em;
-  margin: 1.5em 0;
-  overflow-x: auto;
+  font-size: 1.15em !important;
+  text-align: center !important;
+  margin: 1.8em 0 !important;
+  overflow-x: auto !important;
+  display: block !important;
 }
 
-/* 公式编号右对齐 */
-.markdown-preview-view .math.display .eqn-num {
-  float: right;
-  color: var(--text-muted);
-  font-size: 0.9em;
+.markdown-preview-view mjx-container[display="true"] mjx-math {
+  display: inline-block !important;
+  text-align: left !important;
+  padding: 0.5em 1em !important;
 }
 
-/* 编辑模式下 LaTeX 命令高亮 */
-.markdown-source-view .cm-math {
-  color: var(--text-accent);
-  font-family: "JetBrains Mono", "Fira Code", monospace;
+/* 公式块背景高亮 */
+.markdown-preview-view .math-block,
+.markdown-preview-view mjx-container[display="true"] {
+  background: linear-gradient(to right, transparent, rgba(9, 105, 218, 0.03), transparent) !important;
+  border-radius: 8px !important;
 }
 
-/* 公式块背景 */
-.markdown-preview-view .math-block {
-  background: var(--background-primary-alt);
-  border-radius: 8px;
-  padding: 1em;
-  margin: 1em 0;
-}
-
-/* 多行公式对齐 */
+/* ========== 公式对齐优化 ========== */
 .markdown-preview-view mjx-container mjx-mtable {
-  margin: 0 auto;
+  margin: 0 auto !important;
+  text-align: center !important;
 }
 
-/* 公式引用 */
-.markdown-preview-view a[href^="#eq"] {
-  color: var(--text-accent);
-  font-weight: 600;
+.markdown-preview-view mjx-container mjx-mtr {
+  display: table-row !important;
+}
+
+.markdown-preview-view mjx-container mjx-mtd {
+  padding: 0.3em 0.5em !important;
+  text-align: center !important;
+}
+
+/* ========== 公式编号右对齐 ========== */
+.markdown-preview-view .eqn-num {
+  float: right !important;
+  color: #6e7781 !important;
+  font-size: 0.9em !important;
+  margin-left: 1em !important;
+}
+
+/* ========== 公式引用链接 ========== */
+.markdown-preview-view a[href^="#eq"],
+.markdown-preview-view a[href^="#mjx-eq"] {
+  color: #0969da !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-bottom: 1px dotted #0969da !important;
+}
+
+.markdown-preview-view a[href^="#eq"]:hover,
+.markdown-preview-view a[href^="#mjx-eq"]:hover {
+  background-color: rgba(9, 105, 218, 0.08) !important;
+  border-bottom-style: solid !important;
+}
+
+/* ========== 行间公式渲染优化 ========== */
+/* 确保公式不会溢出 */
+.markdown-preview-view mjx-container {
+  max-width: 100% !important;
+}
+
+/* 公式中的符号 */
+.markdown-preview-view mjx-container mjx-mi {
+  font-family: "KaTeX_Math", "Times New Roman", serif !important;
+  font-style: italic !important;
+}
+
+.markdown-preview-view mjx-container mjx-mo,
+.markdown-preview-view mjx-container mjx-mn {
+  font-family: "KaTeX_Main", "Times New Roman", serif !important;
+}
+
+.markdown-preview-view mjx-container mjx-texatom {
+  font-family: "KaTeX_Main", "Times New Roman", serif !important;
+}
+
+/* ========== 深色模式适配 ========== */
+.theme-dark .cm-math,
+.theme-dark .cm-inline-math {
+  color: #e6edf3 !important;
+}
+
+.theme-dark .markdown-preview-view mjx-container:not([display="true"]) {
+  color: #e6edf3 !important;
+}
+
+.theme-dark .markdown-preview-view mjx-container[display="true"] {
+  background: linear-gradient(to right, transparent, rgba(88, 166, 255, 0.05), transparent) !important;
+}
+
+.theme-dark .markdown-preview-view .math-block {
+  background: linear-gradient(to right, transparent, rgba(88, 166, 255, 0.05), transparent) !important;
+}
+
+/* ========== 滚动条（公式过长时） ========== */
+.markdown-preview-view mjx-container::-webkit-scrollbar {
+  height: 6px !important;
+}
+
+.markdown-preview-view mjx-container::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.markdown-preview-view mjx-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1 !important;
+  border-radius: 3px !important;
+}
+
+.theme-dark .markdown-preview-view mjx-container::-webkit-scrollbar-thumb {
+  background: #484f58 !important;
 }
