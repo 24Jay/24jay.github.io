@@ -27,6 +27,9 @@ package-lock.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
+# Claude Code local settings
+.claude/
+
 # Misc
 _sass/vendors
 assets/js/dist
