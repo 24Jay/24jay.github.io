@@ -48,11 +48,21 @@ GROUP BY tags
 
 ## 写作检查清单
 
-- [ ] 标题是否符合 `YYYY-MM-DD-title.md` 格式
-- [ ] 图片是否放入 `assets/img/posts/YYYYMMDD/` 目录
-- [ ] 数学公式是否启用 `math: true`
-- [ ] 描述(description)是否填写
-- [ ] 本地预览是否正常 `bash tools/run.sh`
+### 文件命名规范
+```
+_posts/YYYY-MM-DD-article-title.md
+```
+- ✅ 日期前缀: `2026-04-12-`
+- ✅ 小写英文: `claude-code-guide`
+- ✅ 连字符连接: `-`
+- ❌ 避免空格、大写、中文字符
+
+### 发布前检查
+- [ ] 文件名格式: `YYYY-MM-DD-article-title.md`
+- [ ] 图片放入: `assets/img/posts/YYYYMMDD/`
+- [ ] 数学公式启用: `math: true`
+- [ ] 描述(description)已填写
+- [ ] 本地预览正常: `bash tools/run.sh`
 
 ---
 
