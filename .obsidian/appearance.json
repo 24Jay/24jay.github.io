@@ -6,9 +6,10 @@
   "monospaceFontFamily": "JetBrains Mono, Fira Code, Consolas, monospace",
   "cssTheme": "",
   "enabledCssSnippets": [
-    "blog-writing",
+    "chirpy-dark",
     "math-beautify"
   ],
+  "accentColor": "#ff6b6b",
   "translucency": false,
   "baseFontSize": 16,
   "baseFontSizeAction": true
