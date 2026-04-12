@@ -17,14 +17,14 @@
   --text-normal: #d4d4d4;
   --text-muted: #9ca3af;
   --text-faint: #6b7280;
-  --text-accent: #ff6b6b;
-  --text-accent-hover: #ff8585;
-  --text-on-accent: #ffffff;
+  --text-accent: #4ecdc4;
+  --text-accent-hover: #6ee7df;
+  --text-on-accent: #1e1e1e;
 
   --interactive-normal: #3e3e42;
   --interactive-hover: #4e4e52;
-  --interactive-accent: #ff6b6b;
-  --interactive-accent-hover: #ff8585;
+  --interactive-accent: #4ecdc4;
+  --interactive-accent-hover: #6ee7df;
 
   --link-color: #4dabf7;
   --link-color-hover: #74c0fc;
