@@ -1,6 +1,6 @@
 {
   "theme": "obsidian",
-  "accentColor": "#4ecdc4",
+  "accentColor": "#ff6b6b",
   "interfaceFontFamily": "",
   "textFontFamily": "",
   "monospaceFontFamily": "JetBrains Mono, Fira Code, Consolas, monospace",
@@ -9,7 +9,6 @@
     "chirpy-dark",
     "math-beautify"
   ],
-  "accentColor": "#ff6b6b",
   "translucency": false,
   "baseFontSize": 16,
   "baseFontSizeAction": true
