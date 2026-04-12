@@ -11,7 +11,12 @@ Gemfile.lock
 *.DS_Store
 .DS_Store
 
-.obsidian*
+# Obsidian - 忽略个人状态但保留共享配置
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/daily-notes.json
+.obsidian/plugins/*/data.json
 
 # RubyGems
 *.gem
