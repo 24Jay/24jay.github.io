@@ -1,6 +1,24 @@
 [
   
   {
+    "title": "Claude Code实践手册",
+    "url": "/posts/claude/",
+    "categories": "AI",
+    "tags": "Agent",
+    "date": "2026-04-10 20:00:00 +0800",
+    "content": "1.  问题修复 1.1 解决登录问题：修改~/.claude.json配置文件，新增一行配置即可：   \"hasCompletedOnboarding\": true,   1.2 配置模型 配置文件位置： ~/.claude/settings.json  配置内容：    ANTHROPIC_BASE_URL: https://api.kimi.com/coding/   ANTHROPIC_API_KEY: 你的 Kimi API key   现在你可以直接运行 claude 命令启动，不需要再手动设置环境变量了。  额外说明：    此配置保存在全局用户目录，对所有项目生效   如果你想只对当前项目生效，可以使用 .claude/settings.local.json（会被 gitignore）   如需修改，直接编辑 ~/.claude/settings.json 即可     {   \"env\": { \"ANTHROPIC_BASE_URL\": \"https://api.kimi.com/coding/\", \"ANTHROPIC_API_KEY\": \"sk-kimi-xxxxx\", \"ENABLE_TOOL_SEARCH\": \"false\"    } }           ENABLE_TOOL_SEARCH作用：    当设置为 false 时，Claude Code 不会尝试使用 Anthropic 的 tool_search 原生工具   这在使用第三方 API 代理（如 Kimi、OpenRouter 等）时是必要的，因为这些代理通常不支持 Anthropic 特有的 tool_search 功能   "
+  },
+  
+  {
+    "title": "Lerobot操作指南",
+    "url": "/posts/lerobot/",
+    "categories": "AI",
+    "tags": "VLA",
+    "date": "2026-02-07 20:00:00 +0800",
+    "content": "教程     https://huggingface.co/spaces/lerobot/robot-learning-tutorial   Mac配置    从臂端口：/dev/tty.usbmodem5B3E1203541   主臂端口：/dev/tty.usbmodem5B3E1198221   数据 dataset存在不同版本，并且不兼容，需要通过内置转换脚本转换。    v2.1   v3.0   共享数据到HugggingFace：  # Install the Hugging Face CLI brew install huggingface-cli  # (optional) Login with your Hugging Face credentials hf auth login  # Push your dataset files hf upload quantux/robot . --repo-type=dataset  cd l  策略  act、diffusion、groot、pi0、pi05、pi0_fast、rtc、sac、sarm、smolvla、tdmpc、vqbet、wall_x、xvla  ubuntu校准  .cache/huggingface/lerobot/calibration/robots/so101_follower/my_awesome_follower_arm.json  .cache/huggingface/lerobot/calibration/teleoperators/so101_leader/my_awesome_leader_arm.json  "
+  },
+  
+  {
     "title": "大模型强化学习算法推导",
     "url": "/posts/rl-llm/",
     "categories": "AI",
