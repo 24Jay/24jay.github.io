@@ -1,0 +1,240 @@
+/* ============================================
+   技术博客写作主题增强
+   ============================================ */
+
+/* 编辑区背景 */
+.markdown-source-view .cm-editor {
+  background: linear-gradient(to bottom, var(--background-primary) 0%, var(--background-primary-alt) 100%);
+}
+
+/* 标题样式 */
+.markdown-preview-view h1,
+.markdown-source-view .cm-header-1 {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--text-accent);
+  border-bottom: 2px solid var(--background-modifier-border);
+  padding-bottom: 0.3em;
+  margin-top: 1.5em;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view .cm-header-2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--text-normal);
+  border-left: 4px solid var(--text-accent);
+  padding-left: 0.5em;
+  margin-top: 1.3em;
+}
+
+.markdown-preview-view h3,
+.markdown-source-view .cm-header-3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1.2em;
+}
+
+/* 代码块美化 */
+.markdown-preview-view pre,
+.markdown-source-view .HyperMD-codeblock {
+  background: var(--code-background) !important;
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.markdown-preview-view code {
+  background: var(--code-background);
+  color: var(--code-normal);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* 引用块样式 - 类似 Chirpy 主题 */
+.markdown-preview-view blockquote,
+.markdown-source-view .HyperMD-quote {
+  background: var(--background-primary-alt);
+  border-left: 4px solid var(--text-accent);
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-muted);
+}
+
+/* 提示框样式 */
+.markdown-preview-view blockquote[data-callout],
+.markdown-preview-view .callout {
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+/* 表格美化 */
+.markdown-preview-view table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.markdown-preview-view th {
+  background: var(--background-modifier-hover);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+
+.markdown-preview-view td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-preview-view tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-preview-view tr:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* 数学公式居中 */
+.markdown-preview-view mjx-container {
+  text-align: center;
+  overflow-x: auto;
+  padding: 0.5em 0;
+}
+
+/* 图片居中 + 圆角 */
+.markdown-preview-view img {
+  display: block;
+  margin: 1.5em auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 图片说明 */
+.markdown-preview-view img + em {
+  display: block;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+}
+
+/* 列表样式 */
+.markdown-preview-view ul > li,
+.markdown-preview-view ol > li {
+  margin: 0.4em 0;
+}
+
+.markdown-preview-view ul > li::marker {
+  color: var(--text-accent);
+}
+
+/* 任务列表 */
+.markdown-preview-view .task-list-item-checkbox {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 4px;
+  border: 2px solid var(--text-accent);
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked {
+  background: var(--text-accent);
+}
+
+/* 链接样式 */
+.markdown-preview-view a {
+  color: var(--text-accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--text-accent);
+  transition: all 0.2s ease;
+}
+
+.markdown-preview-view a:hover {
+  border-bottom-style: solid;
+  background: var(--background-modifier-hover);
+}
+
+/* Front matter (Properties) 美化 */
+.metadata-container {
+  background: var(--background-primary-alt);
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.metadata-property-key {
+  font-weight: 600;
+  color: var(--text-accent);
+}
+
+/* 分割线 */
+.markdown-preview-view hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--background-modifier-border), transparent);
+  margin: 2em 0;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* 文件导航栏 */
+.nav-file-title {
+  border-radius: 4px;
+  margin: 2px 8px;
+  padding: 4px 8px;
+}
+
+.nav-file-title:hover {
+  background: var(--background-modifier-hover);
+}
+
+.nav-file-title.is-active {
+  background: var(--background-modifier-hover);
+  color: var(--text-accent);
+  font-weight: 600;
+}
+
+/* 文件夹样式 */
+.nav-folder-title {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+/* 特殊文件夹图标 */
+.nav-folder-children .nav-folder:nth-child(1) .nav-folder-title-content::before {
+  content: "📁 ";
+}
+
+/* 右侧边栏标签页 */
+.workspace-tab-header.is-active {
+  color: var(--text-accent);
+}

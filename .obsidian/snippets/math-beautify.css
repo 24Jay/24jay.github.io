@@ -1,0 +1,48 @@
+/* ============================================
+   数学公式显示优化
+   ============================================ */
+
+/* 行内公式 */
+.markdown-preview-view mjx-container:not([display="true"]) {
+  font-size: 0.95em;
+  color: var(--text-normal);
+}
+
+/* 块级公式 */
+.markdown-preview-view mjx-container[display="true"] {
+  font-size: 1.1em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+}
+
+/* 公式编号右对齐 */
+.markdown-preview-view .math.display .eqn-num {
+  float: right;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* 编辑模式下 LaTeX 命令高亮 */
+.markdown-source-view .cm-math {
+  color: var(--text-accent);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* 公式块背景 */
+.markdown-preview-view .math-block {
+  background: var(--background-primary-alt);
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+/* 多行公式对齐 */
+.markdown-preview-view mjx-container mjx-mtable {
+  margin: 0 auto;
+}
+
+/* 公式引用 */
+.markdown-preview-view a[href^="#eq"] {
+  color: var(--text-accent);
+  font-weight: 600;
+}
