@@ -39,6 +39,14 @@
 
   --tag-background: #3e3e42;
   --tag-color: #d4d4d4;
+
+  /* 标题层级颜色 */
+  --h1-color: #4ecdc4;      /* 薄荷绿 */
+  --h2-color: #4dabf7;      /* 天蓝色 */
+  --h3-color: #f4bf75;      /* 琥珀金 */
+  --h4-color: #c792ea;      /* 紫罗兰 */
+  --h5-color: #9ca3af;      /* 灰色 */
+  --h6-color: #6b7280;      /* 深灰 */
 }
 
 /* ---------- 内容区背景 ---------- */
@@ -78,35 +86,76 @@
   color: var(--text-faint);
 }
 
-/* ---------- 标题样式 ---------- */
+/* ---------- 标题样式 - 彩虹层级 ---------- */
+
+/* H1 - 薄荷绿 */
 .markdown-preview-view h1,
 .markdown-source-view .cm-header-1 {
   font-size: 2em;
-  font-weight: 600;
-  color: var(--heading-color, var(--text-normal));
-  border-bottom: 1px solid var(--background-modifier-border);
+  font-weight: 700;
+  color: var(--h1-color);
+  border-bottom: 2px solid var(--h1-color);
   padding-bottom: 0.3em;
   margin-top: 1.5em;
   margin-bottom: 0.8em;
 }
 
+/* H2 - 天蓝色 */
 .markdown-preview-view h2,
 .markdown-source-view .cm-header-2 {
   font-size: 1.6em;
   font-weight: 600;
-  color: var(--heading-color, var(--text-normal));
+  color: var(--h2-color);
   margin-top: 1.3em;
   margin-bottom: 0.6em;
   border-bottom: none;
+  border-left: 4px solid var(--h2-color);
+  padding-left: 0.5em;
 }
 
+/* H3 - 琥珀金 */
 .markdown-preview-view h3,
 .markdown-source-view .cm-header-3 {
   font-size: 1.3em;
   font-weight: 600;
-  color: var(--heading-color, var(--text-normal));
+  color: var(--h3-color);
   margin-top: 1.2em;
   margin-bottom: 0.5em;
+}
+
+/* H4 - 紫罗兰 */
+.markdown-preview-view h4,
+.markdown-source-view .cm-header-4 {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--h4-color);
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}
+
+/* H5 - 灰色 */
+.markdown-preview-view h5,
+.markdown-source-view .cm-header-5 {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--h5-color);
+  margin-top: 0.8em;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* H6 - 深灰 */
+.markdown-preview-view h6,
+.markdown-source-view .cm-header-6 {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--h6-color);
+  margin-top: 0.8em;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-style: italic;
 }
 
 /* ---------- 代码块样式 ---------- */
