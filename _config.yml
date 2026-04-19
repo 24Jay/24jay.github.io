@@ -171,6 +171,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  weread:
+    output: true
+    permalink: /weread/:title/
 
 defaults:
   - scope:
@@ -193,6 +196,14 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: weread
+    values:
+      layout: post
+      comments: false
+      toc: true
+      permalink: /weread/:title/
 
 sass:
   style: compressed
