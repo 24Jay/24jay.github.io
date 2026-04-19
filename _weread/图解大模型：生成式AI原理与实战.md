@@ -1,10 +1,9 @@
 ---
+
 title: "图解大模型：生成式AI原理与实战"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # 图解大模型：生成式AI原理与实战

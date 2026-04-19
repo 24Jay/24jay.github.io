@@ -1,10 +1,9 @@
 ---
+
 title: "The Complete Sherlock Holmes 夏洛克•福尔摩斯全集(英文原版)(套装上下册)"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # The Complete Sherlock Holmes 夏洛克•福尔摩斯全集(英文原版)(套装上下册)

@@ -1,10 +1,9 @@
 ---
+
 title: "AI行动方案：传统企业如何决胜人工智能转型"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # AI行动方案：传统企业如何决胜人工智能转型

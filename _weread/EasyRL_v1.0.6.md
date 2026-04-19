@@ -1,10 +1,9 @@
 ---
+
 title: "EasyRL_v1.0.6"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # EasyRL_v1.0.6

@@ -1,10 +1,9 @@
 ---
+
 title: "流畅的Python"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # 流畅的Python

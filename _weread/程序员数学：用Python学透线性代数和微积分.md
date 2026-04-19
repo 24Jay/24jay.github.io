@@ -1,10 +1,9 @@
 ---
+
 title: "程序员数学：用Python学透线性代数和微积分"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # 程序员数学：用Python学透线性代数和微积分

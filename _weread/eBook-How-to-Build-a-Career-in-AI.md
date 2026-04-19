@@ -1,10 +1,9 @@
 ---
+
 title: "eBook-How-to-Build-a-Career-in-AI"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # eBook-How-to-Build-a-Career-in-AI

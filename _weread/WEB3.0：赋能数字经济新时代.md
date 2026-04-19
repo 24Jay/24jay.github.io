@@ -1,10 +1,9 @@
 ---
+
 title: "WEB3.0：赋能数字经济新时代"
 author: "未知作者"
 date: 2026-04-19
 source: 微信读书
-categories:
-  - Reading
 ---
 
 # WEB3.0：赋能数字经济新时代
