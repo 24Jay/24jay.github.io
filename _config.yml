@@ -14,7 +14,7 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Qx-DEPLOY-TEST
+title: Qx
 
 tagline: keep hungry, keep foolish! 
 
@@ -198,18 +198,6 @@ sass:
   style: compressed
   load_paths:
     - _sass
-
-# 自定义样式注入
-head_scripts:
-  - |-
-    <style>
-      .markdown-body h1, .content h1, .post-content h1 { color: #4ecdc4 !important; border-bottom: 2px solid #4ecdc4; padding-bottom: 0.3em; }
-      .markdown-body h2, .content h2, .post-content h2 { color: #4dabf7 !important; border-left: 4px solid #4dabf7; padding-left: 0.5em; }
-      .markdown-body h3, .content h3, .post-content h3 { color: #f4bf75 !important; }
-      .markdown-body h4, .content h4, .post-content h4 { color: #c792ea !important; }
-      .markdown-body h5, .content h5, .post-content h5 { color: #9ca3af !important; }
-      .markdown-body h6, .content h6, .post-content h6 { color: #6b7280 !important; }
-    </style>
 
 compress_html:
   clippings: all
